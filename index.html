@@ -1,22 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santipur Fresh Meat</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: sans-serif; background-color: #f8f8f8; margin: 0; }
+        header { background: #fff; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .container { padding: 15px; }
+        .product-card { background: white; border-radius: 15px; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .product-img { width: 80px; height: 80px; border-radius: 10px; background: #eee; margin-right: 15px; object-fit: cover; }
+        .info { flex-grow: 1; }
+        .name { font-weight: bold; font-size: 1.1rem; }
+        .price { color: #e11b1e; font-weight: bold; margin: 5px 0; }
+        .btn { background: #e11b1e; color: white; border: none; padding: 8px 15px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+    </style>
 </head>
 <body>
-    <h1>Santipur Fresh Meat</h1>
-    <div id="product-container">
-        <div class="card">
-            <h3>Chicken Curry Cut</h3>
-            <p>Price: ₹220/kg</p>
-            <button onclick="order('Chicken Curry Cut')">Order on WhatsApp</button>
+
+<header>
+    <h2>Santipur Fresh Meat</h2>
+</header>
+
+<div class="container" id="menu">
+    <!-- Product 1 -->
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1604671801908-6f0c6a0e2c05?w=200" class="product-img">
+        <div class="info">
+            <div class="name">Chicken Curry Cut</div>
+            <div class="price">₹220 / kg</div>
+            <button class="btn" onclick="order('Chicken Curry Cut', 220)">Add +</button>
         </div>
     </div>
-    <script>
-        function order(item) {
-            window.location.href = "https://wa.me/91XXXXXXXXXX?text=I want to order " + item;
-        }
-    </script>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=200" class="product-img">
+        <div class="info">
+            <div class="name">Rohu Fish</div>
+            <div class="price">₹180 / kg</div>
+            <button class="btn" onclick="order('Rohu Fish', 180)">Add +</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function order(item, price) {
+        let msg = "Hi, I want to order " + item + " for ₹" + price + ". Please deliver it.";
+        window.open("https://wa.me/91XXXXXXXXXX?text=" + encodeURIComponent(msg), '_blank');
+    }
+</script>
 </body>
 </html>
