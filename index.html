@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Santipur Fresh Meat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Santipur Fresh Meat</h1>
+    <div id="product-container">
+        <div class="card">
+            <h3>Chicken Curry Cut</h3>
+            <p>Price: ₹220/kg</p>
+            <button onclick="order('Chicken Curry Cut')">Order on WhatsApp</button>
+        </div>
+    </div>
+    <script>
+        function order(item) {
+            window.location.href = "https://wa.me/91XXXXXXXXXX?text=I want to order " + item;
+        }
+    </script>
+</body>
+</html>
